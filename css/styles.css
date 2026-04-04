@@ -1431,6 +1431,205 @@ strong { color: var(--text); font-weight: 600; }
   h2 { font-size: 1.5rem; }
 }
 
+/* ─── Landing Page (Facebook Ads) ─────────────────────────────── */
+.lp-nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 200;
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  height: var(--nav-height);
+}
+
+.lp-nav__inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.lp-nav__phone {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--navy);
+  text-decoration: none;
+  font-family: var(--font-sans);
+}
+
+.lp-nav__phone:hover { color: var(--navy-light); }
+
+.lp-hero {
+  padding-top: calc(var(--nav-height) + 64px);
+  padding-bottom: 72px;
+  background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 50%, var(--navy-light) 100%);
+  background-size: 300%;
+  color: var(--white);
+}
+
+.lp-hero__kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,255,255,0.15);
+  color: rgba(255,255,255,0.9);
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 5px 14px;
+  border-radius: 999px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  font-family: var(--font-sans);
+}
+
+.lp-hero__title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  color: var(--white);
+  margin-bottom: 20px;
+  line-height: 1.15;
+}
+
+.lp-hero__sub {
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.85);
+  max-width: 560px;
+  line-height: 1.7;
+  margin-bottom: 36px;
+  font-family: var(--font-sans);
+}
+
+.lp-hero__grid {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 56px;
+  align-items: center;
+}
+
+.lp-hero__photo {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 32px 64px rgba(0,0,0,0.35);
+  display: block;
+}
+
+.lp-price-box {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  text-align: center;
+  box-shadow: var(--shadow-lg);
+}
+
+.lp-price-box__label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+  font-family: var(--font-sans);
+}
+
+.lp-price-box__amount {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: var(--navy);
+  line-height: 1;
+  font-family: var(--font-sans);
+}
+
+.lp-price-box__period {
+  font-size: 1rem;
+  color: var(--text-muted);
+  font-family: var(--font-sans);
+}
+
+.lp-price-box__note {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 12px;
+  font-family: var(--font-sans);
+}
+
+.lp-form-section {
+  background: var(--navy-dark);
+  padding: 80px 0;
+}
+
+.lp-form-section h2 {
+  color: var(--white);
+  margin-bottom: 8px;
+}
+
+.lp-form-section p {
+  color: rgba(255,255,255,0.75);
+  margin-bottom: 32px;
+  font-family: var(--font-sans);
+}
+
+.lp-form-section .form-label {
+  color: rgba(255,255,255,0.85);
+}
+
+.lp-or-divider {
+  text-align: center;
+  margin-top: 28px;
+  color: rgba(255,255,255,0.55);
+  font-size: 0.9rem;
+  font-family: var(--font-sans);
+}
+
+.lp-or-divider a {
+  color: var(--white);
+  font-weight: 700;
+}
+
+.lp-footer {
+  background: var(--navy-dark);
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding: 20px 0;
+  text-align: center;
+  color: rgba(255,255,255,0.45);
+  font-size: 0.8rem;
+  font-family: var(--font-sans);
+}
+
+.lp-pain-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 28px;
+  border-left: 4px solid var(--navy);
+}
+
+.lp-pain-card strong {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--text);
+  font-size: 1rem;
+}
+
+.lp-pain-card p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .lp-hero { padding-top: calc(var(--nav-height) + 40px); padding-bottom: 48px; }
+  .lp-hero__grid { grid-template-columns: 1fr; gap: 36px; }
+  .lp-hero__photo { max-width: 260px; margin: 0 auto; }
+  .lp-price-box { padding: 28px 20px; }
+  .lp-price-box__amount { font-size: 2.8rem; }
+  .lp-form-section { padding: 56px 0; }
+}
+
 @media (max-width: 480px) {
   .container { padding: 0 16px; }
   .stat-grid { grid-template-columns: 1fr 1fr; }
