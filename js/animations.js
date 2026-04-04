@@ -2,7 +2,7 @@
 (function () {
   'use strict';
 
-  // --- Scroll-triggered animations via IntersectionObserver ---
+  // --- Scroll-triggered animations ---
   var animObserver = new IntersectionObserver(function (entries) {
     entries.forEach(function (entry) {
       if (entry.isIntersecting) {
@@ -19,23 +19,18 @@
   // --- Stagger children of [data-stagger] containers ---
   document.querySelectorAll('[data-stagger]').forEach(function (container) {
     Array.from(container.children).forEach(function (child, i) {
-      if (!child.hasAttribute('data-animate')) {
-        child.setAttribute('data-animate', '');
-      }
+      if (!child.hasAttribute('data-animate')) child.setAttribute('data-animate', '');
       child.setAttribute('data-delay', String(Math.min(i + 1, 7)));
       animObserver.observe(child);
     });
   });
 
   // --- Service Tabs ---
-  var tabs = document.querySelectorAll('.service-tabs__tab');
-  var panels = document.querySelectorAll('.service-tabs__panel');
-
-  tabs.forEach(function (tab) {
+  document.querySelectorAll('.service-tabs__tab').forEach(function (tab) {
     tab.addEventListener('click', function () {
       var target = tab.getAttribute('data-tab');
-      tabs.forEach(function (t) { t.classList.remove('active'); });
-      panels.forEach(function (p) { p.classList.remove('active'); });
+      document.querySelectorAll('.service-tabs__tab').forEach(function (t) { t.classList.remove('active'); });
+      document.querySelectorAll('.service-tabs__panel').forEach(function (p) { p.classList.remove('active'); });
       tab.classList.add('active');
       var panel = document.getElementById('tab-' + target);
       if (panel) panel.classList.add('active');
@@ -45,22 +40,16 @@
   // --- Nav scroll shadow ---
   var nav = document.querySelector('.nav');
   if (nav) {
-    var scrolled = false;
     window.addEventListener('scroll', function () {
-      var nowScrolled = window.scrollY > 10;
-      if (nowScrolled !== scrolled) {
-        scrolled = nowScrolled;
-        nav.style.boxShadow = scrolled ? '0 4px 24px rgba(56,57,97,0.14)' : '';
-      }
+      nav.style.boxShadow = window.scrollY > 10 ? '0 4px 24px rgba(56,57,97,0.14)' : '';
     }, { passive: true });
   }
 
   // =====================================================
-  // 🥚 EASTER EGGS
+  // 🥚 EASTER EGGS — fun for everyone
   // =====================================================
 
-  // -- Toast helper --
-  function showToast(msg) {
+  function showToast(msg, duration) {
     var existing = document.querySelector('.egg-toast');
     if (existing) existing.remove();
     var toast = document.createElement('div');
@@ -71,99 +60,116 @@
     setTimeout(function () {
       toast.classList.remove('show');
       setTimeout(function () { toast.remove(); }, 500);
-    }, 4000);
+    }, duration || 4500);
   }
 
-  // -- Console art --
-  if (typeof console !== 'undefined') {
-    console.log('%c  WTS  ', 'background:#383961;color:#fff;font-size:22px;font-weight:bold;padding:4px 12px;border-radius:6px;');
-    console.log('%cWagga Technology Solutions', 'color:#383961;font-size:14px;font-weight:bold;');
-    console.log('%c\nHey there, DevTools detective! 🕵️\nYou\'ve got a keen eye. If you\'re a developer, I\'d love a chat.\n📧 alex@waggatechsolutions.au\n\nP.S. There are a few Easter eggs hidden on the site. Happy hunting 🥚\n', 'color:#52526e;font-size:12px;');
+  // 🥚 1. Hidden egg in footer — small emoji anyone can click
+  var footerEgg = document.getElementById('footer-egg');
+  if (footerEgg) {
+    footerEgg.addEventListener('click', function () {
+      showToast('🥚 You found it! You\'re officially more tech-savvy than you think. Give Alex a call — 0473 430 419', 5000);
+    });
   }
 
-  // -- Tab title change --
-  var originalTitle = document.title;
-  document.addEventListener('visibilitychange', function () {
-    document.title = document.hidden ? '👋 Miss me already?' : originalTitle;
-  });
+  // 🥚 2. Click Alex's photo on the index page
+  var alexPhoto = document.getElementById('alex-photo');
+  if (alexPhoto) {
+    alexPhoto.addEventListener('click', function () {
+      var msgs = [
+        '👋 Hi! That\'s me — Alex. Caught mid-headshot. Call me on 0473 430 419 instead!',
+        '📸 Good headshot, right? My mum thinks so. Call me on 0473 430 419.',
+        '🙋 That\'s me! Less intimidating in person. Call 0473 430 419 and find out.',
+      ];
+      showToast(msgs[Math.floor(Math.random() * msgs.length)]);
+    });
+    alexPhoto.style.cursor = 'pointer';
+  }
 
-  // -- Konami Code: ↑↑↓↓←→←→BA --
-  var konami = ['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight','b','a'];
-  var konamiIdx = 0;
-  var konamiMessages = [
-    '🎮 +99 lives added. Unfortunately this isn\'t that kind of site.',
-    '🕹️ Konami Code! Impressive. I accept payment in retro game cartridges.',
-    '🥚 Easter egg unlocked! Now put your hands up and step away from the keyboard.',
-    '🚀 Cheat code activated. Your WiFi speed has been... not changed at all.',
-  ];
-  document.addEventListener('keydown', function (e) {
-    if (e.key === konami[konamiIdx]) {
-      konamiIdx++;
-      if (konamiIdx === konami.length) {
-        konamiIdx = 0;
-        var msg = konamiMessages[Math.floor(Math.random() * konamiMessages.length)];
-        showToast(msg);
-      }
-    } else {
-      konamiIdx = e.key === konami[0] ? 1 : 0;
-    }
-  });
-
-  // -- Logo click Easter egg (5 clicks in 3 seconds) --
+  // 🥚 3. Logo — click 5 times fast
   var logo = document.querySelector('.nav__logo');
   if (logo) {
-    var clickCount = 0;
-    var clickTimer = null;
-    var logoMessages = [
-      '🥚 Found it! You clicked the logo 5 times. Solid commitment.',
-      '🎉 Logo Easter egg unlocked! Alex is impressed.',
-      '👀 Still here? Try the Konami code next.',
-    ];
-    logo.addEventListener('click', function (e) {
-      if (e.target.closest('a') && logo.getAttribute('href') !== '#') {
-        // Don't block navigation, but count
-      }
+    var clickCount = 0, clickTimer = null;
+    logo.addEventListener('click', function () {
       clickCount++;
       if (clickTimer) clearTimeout(clickTimer);
       if (clickCount >= 5) {
         clickCount = 0;
-        var msg = logoMessages[Math.floor(Math.random() * logoMessages.length)];
-        showToast(msg);
+        showToast('🏆 5 clicks! You win... absolutely nothing. But Alex appreciates the dedication. Call 0473 430 419!');
         return;
       }
-      clickTimer = setTimeout(function () { clickCount = 0; }, 3000);
+      clickTimer = setTimeout(function () { clickCount = 0; }, 2500);
     });
   }
 
-  // -- Secret hover on footer copyright --
-  var copy = document.querySelector('.footer__copy');
-  if (copy) {
-    var hoverCount = 0;
-    copy.addEventListener('mouseenter', function () {
-      hoverCount++;
-      if (hoverCount === 7) {
-        hoverCount = 0;
-        showToast('🥚 You hovered the footer 7 times. Curiosity: 10/10.');
+  // 🥚 4. Tab away — title changes to a friendly nudge
+  var originalTitle = document.title;
+  document.addEventListener('visibilitychange', function () {
+    document.title = document.hidden ? '👋 Your tech won\'t fix itself...' : originalTitle;
+  });
+
+  // 🥚 5. Type "wagga" anywhere on the page
+  var typedBuffer = '';
+  document.addEventListener('keydown', function (e) {
+    if (e.key.length === 1) {
+      typedBuffer = (typedBuffer + e.key.toLowerCase()).slice(-5);
+      if (typedBuffer === 'wagga') {
+        typedBuffer = '';
+        showToast('🦘 You typed Wagga! Good taste. Best town in the Riverina. Alex agrees.');
       }
-    });
-  }
+    }
+  });
 
-  // -- Secret shake: shake the device (mobile) to trigger --
+  // 🥚 6. Click the price tag on any featured service card 3 times
+  var priceTags = document.querySelectorAll('[data-price-egg]');
+  priceTags.forEach(function (tag) {
+    var n = 0, t = null;
+    tag.addEventListener('click', function () {
+      n++;
+      if (t) clearTimeout(t);
+      if (n >= 3) {
+        n = 0;
+        showToast('💸 Yep, that\'s really the price. No hidden fees, no nasty surprises. Promise.');
+        return;
+      }
+      t = setTimeout(function () { n = 0; }, 2000);
+    });
+    tag.style.cursor = 'pointer';
+  });
+
+  // 🥚 7. Shake the phone (mobile users)
   if (typeof DeviceMotionEvent !== 'undefined') {
     var lastShake = 0;
-    var shakeThreshold = 15;
     window.addEventListener('devicemotion', function (e) {
       var acc = e.accelerationIncludingGravity;
       if (!acc) return;
-      var mag = Math.sqrt(acc.x*acc.x + acc.y*acc.y + acc.z*acc.z);
-      if (mag > shakeThreshold) {
-        var now = Date.now();
-        if (now - lastShake > 3000) {
-          lastShake = now;
-          showToast('📳 You shook your phone! Nice. That\'s dedication.');
-        }
+      var mag = Math.sqrt(acc.x * acc.x + acc.y * acc.y + acc.z * acc.z);
+      if (mag > 20 && Date.now() - lastShake > 4000) {
+        lastShake = Date.now();
+        showToast('📳 Careful — shaking the phone won\'t fix the WiFi. But Alex can. Call 0473 430 419!');
       }
     });
+  }
+
+  // 🥚 8. Idle for 45 seconds — gentle nudge
+  var idleTimer = null;
+  var idleShown = false;
+  function resetIdle() {
+    if (idleTimer) clearTimeout(idleTimer);
+    if (idleShown) return;
+    idleTimer = setTimeout(function () {
+      idleShown = true;
+      showToast('🤔 Still thinking? That\'s ok. Give Alex a call — 0473 430 419 — no pressure.', 6000);
+    }, 45000);
+  }
+  ['mousemove', 'keydown', 'scroll', 'touchstart'].forEach(function (evt) {
+    document.addEventListener(evt, resetIdle, { passive: true });
+  });
+  resetIdle();
+
+  // 🥚 9. Console message — for the devs who peek
+  if (typeof console !== 'undefined') {
+    console.log('%c WTS ', 'background:#383961;color:#fff;font-size:20px;font-weight:bold;padding:4px 12px;border-radius:6px;');
+    console.log('%cWagga Technology Solutions\nalex@waggatechsolutions.au\n\nHey dev 👋 There are Easter eggs hidden all over the site for normal humans too, not just console-openers. Happy hunting.\n', 'color:#52526e;font-size:12px;');
   }
 
 })();
