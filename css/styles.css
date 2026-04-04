@@ -1418,6 +1418,99 @@ strong { color: var(--text); font-weight: 600; }
   .cta-banner { border-radius: var(--radius-md); }
 }
 
+/* --- Review Cards --- */
+.review-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: all var(--transition);
+}
+
+.review-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-3px);
+}
+
+.review-card__stars {
+  color: #f59e0b;
+  font-size: 1.05rem;
+  letter-spacing: 2px;
+}
+
+.review-card__body {
+  font-size: 0.925rem;
+  line-height: 1.75;
+  color: var(--text-muted);
+  flex: 1;
+  font-style: italic;
+}
+
+.review-card__author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+
+.review-card__avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--navy);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.review-card__name {
+  font-weight: 700;
+  font-size: 0.875rem;
+  color: var(--text);
+  margin-bottom: 2px;
+}
+
+.review-card__source {
+  font-size: 0.75rem;
+  color: var(--text-light);
+}
+
+/* --- Easter Egg Toast --- */
+.egg-toast {
+  position: fixed;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%) translateY(120px);
+  background: var(--navy-dark);
+  color: var(--white);
+  padding: 14px 28px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 600;
+  z-index: 9999;
+  box-shadow: var(--shadow-lg);
+  transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+  pointer-events: none;
+  white-space: nowrap;
+  max-width: 90vw;
+  text-align: center;
+}
+
+.egg-toast.show {
+  transform: translateX(-50%) translateY(0);
+}
+
 /* --- Service Category Tabs --- */
 .service-tabs__nav {
   display: flex;
