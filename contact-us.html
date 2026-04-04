@@ -36,10 +36,9 @@
       </a>
       <div class="nav__links" role="menubar">
         <div class="nav__dropdown" role="none">
-          <a href="#" class="nav__link nav__dropdown-toggle" role="menuitem" aria-haspopup="true" aria-expanded="false">Services</a>
-          <div class="nav__mega-menu" role="menu" aria-label="Services">
+          <a href="home-support.html" class="nav__link nav__dropdown-toggle" role="menuitem" aria-haspopup="true" aria-expanded="false">Home Support</a>
+          <div class="nav__mega-menu nav__mega-menu--sm" role="menu" aria-label="Home Support services">
             <div class="nav__mega-col">
-              <p class="nav__mega-heading">Home Support</p>
               <a href="home-support.html" class="nav__dropdown-item" role="menuitem">Home Support</a>
               <a href="tech-support-for-seniors.html" class="nav__dropdown-item" role="menuitem">Seniors Support</a>
               <a href="computer-service.html" class="nav__dropdown-item" role="menuitem">Computer Service</a>
@@ -48,8 +47,12 @@
               <a href="virus-malware-removal-in-wagga-wagga.html" class="nav__dropdown-item" role="menuitem">Virus Removal</a>
               <a href="printer-setup-wagga-wagga.html" class="nav__dropdown-item" role="menuitem">Printer Setup</a>
             </div>
+          </div>
+        </div>
+        <div class="nav__dropdown" role="none">
+          <a href="small-business-it-support.html" class="nav__link nav__dropdown-toggle" role="menuitem" aria-haspopup="true" aria-expanded="false">Business IT</a>
+          <div class="nav__mega-menu nav__mega-menu--sm" role="menu" aria-label="Business IT services">
             <div class="nav__mega-col">
-              <p class="nav__mega-heading">Business IT</p>
               <a href="small-business-it-support.html" class="nav__dropdown-item" role="menuitem">IT Support</a>
               <a href="microsoft-365-setup-in-wagga-wagga.html" class="nav__dropdown-item" role="menuitem">Microsoft 365</a>
               <a href="professional-networking-solutions.html" class="nav__dropdown-item" role="menuitem">Networking</a>
@@ -57,15 +60,18 @@
               <a href="ai-that-works-for-your-business.html" class="nav__dropdown-item" role="menuitem">AI Tools</a>
               <a href="office-it-fitout-in-wagga-wagga.html" class="nav__dropdown-item" role="menuitem">Office IT Fitout</a>
             </div>
+          </div>
+        </div>
+        <div class="nav__dropdown" role="none">
+          <a href="web-design.html" class="nav__link nav__dropdown-toggle" role="menuitem" aria-haspopup="true" aria-expanded="false">Web</a>
+          <div class="nav__mega-menu nav__mega-menu--sm" role="menu" aria-label="Web services">
             <div class="nav__mega-col">
-              <p class="nav__mega-heading">Web</p>
               <a href="web-design.html" class="nav__dropdown-item" role="menuitem">Web Design</a>
               <a href="web-maintenance.html" class="nav__dropdown-item" role="menuitem">Web Maintenance</a>
             </div>
           </div>
         </div>
         <a href="about-us.html" class="nav__link" role="menuitem">About</a>
-        <a href="contact-us.html" class="nav__link active" role="menuitem">Contact</a>
       </div>
       <a href="contact-us.html" class="btn btn--primary btn--sm nav__cta">Get in touch</a>
       <button class="nav__hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu" id="hamburger">
@@ -143,12 +149,14 @@
 
           </div>
 
-          <!-- Map placeholder -->
-          <div class="map-placeholder" role="img" aria-label="Map showing Wagga Wagga NSW service area">
-            <div class="map-placeholder__icon">📍</div>
-            <p class="map-placeholder__text">Wagga Wagga NSW</p>
-            <p class="map-placeholder__sub">Servicing Wagga Wagga and the Riverina region</p>
-          </div>
+          <!-- Wagga Wagga map -->
+          <iframe
+            src="https://www.openstreetmap.org/export/embed.html?bbox=147.15%2C-35.22%2C147.55%2C-35.00&amp;layer=mapnik&amp;marker=-35.1082%2C147.3598"
+            title="Wagga Wagga NSW — service area map"
+            loading="lazy"
+            style="width:100%; aspect-ratio:16/7; border:1px solid var(--border); border-radius:var(--radius-md); display:block;"
+            aria-label="Map showing Wagga Wagga NSW service area"
+          ></iframe>
         </div>
 
         <!-- Right: Enquiry form -->

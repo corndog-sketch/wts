@@ -298,6 +298,14 @@ strong { color: var(--text); font-weight: 600; }
   pointer-events: all;
 }
 
+/* Single-column narrow dropdown for per-category nav items */
+.nav__mega-menu--sm {
+  width: 220px;
+  grid-template-columns: 1fr;
+  left: 0;
+  transform: none;
+}
+
 .nav__mega-col {
   display: flex;
   flex-direction: column;
@@ -1345,6 +1353,11 @@ strong { color: var(--text); font-weight: 600; }
   padding-top: var(--nav-height);
 }
 
+/* When hero and page-offset both apply, restore the hero's intended breathing room */
+.hero.page-offset {
+  padding-top: calc(var(--nav-height) + 80px);
+}
+
 /* --- Inline callout / info box --- */
 .callout {
   background: var(--amber-light);
@@ -1373,6 +1386,7 @@ strong { color: var(--text); font-weight: 600; }
 
   .section { padding: 56px 0; }
   .hero { padding-top: calc(var(--nav-height) + 48px); padding-bottom: 48px; }
+  .hero.page-offset { padding-top: calc(var(--nav-height) + 48px); }
 
   .nav__links,
   .nav__cta { display: none; }
