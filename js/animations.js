@@ -25,6 +25,19 @@
     });
   });
 
+  // --- Mobile Nav Accordion ---
+  document.querySelectorAll('.nav__mobile-acc-toggle').forEach(function (toggle) {
+    toggle.addEventListener('click', function () {
+      var acc = toggle.closest('.nav__mobile-acc');
+      var isOpen = acc.classList.contains('open');
+      // Close all others
+      document.querySelectorAll('.nav__mobile-acc.open').forEach(function (el) {
+        el.classList.remove('open');
+      });
+      if (!isOpen) acc.classList.add('open');
+    });
+  });
+
   // --- Service Tabs ---
   document.querySelectorAll('.service-tabs__tab').forEach(function (tab) {
     tab.addEventListener('click', function () {
