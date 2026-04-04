@@ -36,15 +36,31 @@
       <div class="nav__links" role="menubar">
         <div class="nav__dropdown" role="none">
           <a href="#" class="nav__link nav__dropdown-toggle" role="menuitem" aria-haspopup="true" aria-expanded="false">Services</a>
-          <div class="nav__dropdown-menu" role="menu" aria-label="Services">
-            <a href="web-design.html" class="nav__dropdown-item" role="menuitem">Web Design</a>
-            <a href="web-maintenance.html" class="nav__dropdown-item" role="menuitem">Web Maintenance</a>
-            <a href="small-business-it-support.html" class="nav__dropdown-item" role="menuitem">IT Support</a>
-            <a href="home-support.html" class="nav__dropdown-item" role="menuitem">Home Support</a>
-            <a href="tech-support-for-seniors.html" class="nav__dropdown-item" role="menuitem">Seniors Support</a>
-            <a href="microsoft-365-setup-in-wagga-wagga.html" class="nav__dropdown-item" role="menuitem">Microsoft 365</a>
-            <a href="professional-networking-solutions.html" class="nav__dropdown-item" role="menuitem">Networking</a>
-            <a href="business-automation.html" class="nav__dropdown-item" role="menuitem">Business Automation</a>
+          <div class="nav__mega-menu" role="menu" aria-label="Services">
+            <div class="nav__mega-col">
+              <p class="nav__mega-heading">Home Support</p>
+              <a href="home-support.html" class="nav__dropdown-item" role="menuitem">Home Support</a>
+              <a href="tech-support-for-seniors.html" class="nav__dropdown-item" role="menuitem">Seniors Support</a>
+              <a href="computer-service.html" class="nav__dropdown-item" role="menuitem">Computer Service</a>
+              <a href="device-setup.html" class="nav__dropdown-item" role="menuitem">Device Setup</a>
+              <a href="wifi-help-wagga-wagga.html" class="nav__dropdown-item" role="menuitem">WiFi Help</a>
+              <a href="virus-malware-removal-in-wagga-wagga.html" class="nav__dropdown-item" role="menuitem">Virus Removal</a>
+              <a href="printer-setup-wagga-wagga.html" class="nav__dropdown-item" role="menuitem">Printer Setup</a>
+            </div>
+            <div class="nav__mega-col">
+              <p class="nav__mega-heading">Business IT</p>
+              <a href="small-business-it-support.html" class="nav__dropdown-item" role="menuitem">IT Support</a>
+              <a href="microsoft-365-setup-in-wagga-wagga.html" class="nav__dropdown-item" role="menuitem">Microsoft 365</a>
+              <a href="professional-networking-solutions.html" class="nav__dropdown-item" role="menuitem">Networking</a>
+              <a href="business-automation.html" class="nav__dropdown-item" role="menuitem">Business Automation</a>
+              <a href="ai-that-works-for-your-business.html" class="nav__dropdown-item" role="menuitem">AI Tools</a>
+              <a href="office-it-fitout-in-wagga-wagga.html" class="nav__dropdown-item" role="menuitem">Office IT Fitout</a>
+            </div>
+            <div class="nav__mega-col">
+              <p class="nav__mega-heading">Web</p>
+              <a href="web-design.html" class="nav__dropdown-item" role="menuitem">Web Design</a>
+              <a href="web-maintenance.html" class="nav__dropdown-item" role="menuitem">Web Maintenance</a>
+            </div>
           </div>
         </div>
         <a href="about-us.html" class="nav__link" role="menuitem">About</a>
@@ -56,14 +72,26 @@
     </div>
   </nav>
   <div class="nav__mobile-menu" id="mobile-menu" role="dialog" aria-label="Mobile navigation">
-    <a href="web-design.html" class="nav__mobile-link">Web Design</a>
-    <a href="web-maintenance.html" class="nav__mobile-link">Web Maintenance</a>
-    <a href="small-business-it-support.html" class="nav__mobile-link">IT Support</a>
+    <p class="nav__mobile-section">Home Support</p>
     <a href="home-support.html" class="nav__mobile-link">Home Support</a>
     <a href="tech-support-for-seniors.html" class="nav__mobile-link">Seniors Support</a>
+    <a href="computer-service.html" class="nav__mobile-link">Computer Service</a>
+    <a href="device-setup.html" class="nav__mobile-link">Device Setup</a>
+    <a href="wifi-help-wagga-wagga.html" class="nav__mobile-link">WiFi Help</a>
+    <a href="virus-malware-removal-in-wagga-wagga.html" class="nav__mobile-link">Virus Removal</a>
+    <a href="printer-setup-wagga-wagga.html" class="nav__mobile-link">Printer Setup</a>
+    <div class="nav__mobile-divider"></div>
+    <p class="nav__mobile-section">Business IT</p>
+    <a href="small-business-it-support.html" class="nav__mobile-link">IT Support</a>
     <a href="microsoft-365-setup-in-wagga-wagga.html" class="nav__mobile-link">Microsoft 365</a>
     <a href="professional-networking-solutions.html" class="nav__mobile-link">Networking</a>
     <a href="business-automation.html" class="nav__mobile-link">Business Automation</a>
+    <a href="ai-that-works-for-your-business.html" class="nav__mobile-link">AI Tools</a>
+    <a href="office-it-fitout-in-wagga-wagga.html" class="nav__mobile-link">Office IT Fitout</a>
+    <div class="nav__mobile-divider"></div>
+    <p class="nav__mobile-section">Web</p>
+    <a href="web-design.html" class="nav__mobile-link">Web Design</a>
+    <a href="web-maintenance.html" class="nav__mobile-link">Web Maintenance</a>
     <div class="nav__mobile-divider"></div>
     <a href="about-us.html" class="nav__mobile-link">About</a>
     <a href="contact-us.html" class="nav__mobile-link">Contact</a>
@@ -76,10 +104,10 @@
     <!-- Hero -->
     <section class="hero">
       <div class="container">
-        <span class="hero__kicker">Wagga Wagga &amp; Riverina</span>
-        <h1 class="hero__title">Local IT support that actually picks up the phone</h1>
-        <p class="hero__subtitle">I help Wagga Wagga small businesses, tradespeople, and residents with everything tech — from websites to WiFi, computers to Microsoft 365.</p>
-        <div class="hero__actions">
+        <span class="hero__kicker" data-animate="fade">Wagga Wagga &amp; Riverina</span>
+        <h1 class="hero__title" data-animate data-delay="1">Local IT support that actually picks up the phone</h1>
+        <p class="hero__subtitle" data-animate data-delay="2">I help Wagga Wagga small businesses, tradespeople, and residents with everything tech — from websites to WiFi, computers to Microsoft 365.</p>
+        <div class="hero__actions" data-animate data-delay="3">
           <a href="contact-us.html" class="btn btn--primary btn--lg">Get in touch</a>
           <a href="#services" class="btn btn--outline btn--lg">See all services</a>
         </div>
@@ -113,70 +141,127 @@
     <!-- Services Grid -->
     <section class="section" id="services">
       <div class="container">
-        <div class="section-header">
+        <div class="section-header" data-animate>
           <span class="section-header__kicker">What I do</span>
           <h2 class="section-header__title">Everything tech, sorted locally</h2>
-          <p class="section-header__sub">Whether you need a new website, your WiFi sorted, or someone to take the stress out of Microsoft 365 — I've got you covered right here in Wagga.</p>
+          <p class="section-header__sub">Whether you need a new website, your WiFi sorted, or someone to take the stress out of tech — I've got you covered right here in Wagga.</p>
         </div>
-        <div class="grid grid--3">
 
-          <div class="card">
-            <div class="card__icon" aria-hidden="true">🌐</div>
-            <h3 class="card__title">Web Design</h3>
-            <p class="card__body">Professional, mobile-friendly websites built to help your business get found online. No templates, no fluff — just a site that works.</p>
-            <a href="web-design.html" class="btn btn--outline btn--sm" style="margin-top:16px;">Learn more</a>
-          </div>
-
-          <div class="card">
-            <div class="card__icon" aria-hidden="true">🔧</div>
-            <h3 class="card__title">Web Maintenance</h3>
-            <p class="card__body">Ongoing care for your website — updates, security patches, backups, and edits handled so you don't have to think about it.</p>
-            <a href="web-maintenance.html" class="btn btn--outline btn--sm" style="margin-top:16px;">Learn more</a>
-          </div>
-
-          <div class="card">
-            <div class="card__icon" aria-hidden="true">💻</div>
-            <h3 class="card__title">IT Support for Business</h3>
-            <p class="card__body">On-site and remote IT support for Wagga small businesses. I keep your computers, printers, and networks running smoothly.</p>
-            <a href="small-business-it-support.html" class="btn btn--outline btn--sm" style="margin-top:16px;">Learn more</a>
-          </div>
-
-          <div class="card">
-            <div class="card__icon" aria-hidden="true">🏠</div>
-            <h3 class="card__title">Home Support</h3>
-            <p class="card__body">Slow computer? Dodgy internet? New device you can't figure out? I come to you and sort it out — no jargon, no judgment.</p>
-            <a href="home-support.html" class="btn btn--outline btn--sm" style="margin-top:16px;">Learn more</a>
-          </div>
-
-          <div class="card">
-            <div class="card__icon" aria-hidden="true">👴</div>
-            <h3 class="card__title">Seniors Tech Support</h3>
-            <p class="card__body">Patient, friendly help for seniors who want to get more confident with their devices, email, video calls, and online banking.</p>
-            <a href="tech-support-for-seniors.html" class="btn btn--outline btn--sm" style="margin-top:16px;">Learn more</a>
-          </div>
-
-          <div class="card">
-            <div class="card__icon" aria-hidden="true">📧</div>
-            <h3 class="card__title">Microsoft 365</h3>
-            <p class="card__body">Setup, migration, and ongoing support for Microsoft 365 — email, Teams, OneDrive, and all the rest, done right the first time.</p>
-            <a href="microsoft-365-setup-in-wagga-wagga.html" class="btn btn--outline btn--sm" style="margin-top:16px;">Learn more</a>
-          </div>
-
-          <div class="card">
-            <div class="card__icon" aria-hidden="true">📡</div>
-            <h3 class="card__title">Networking</h3>
-            <p class="card__body">Wired and wireless networking for homes and businesses — fast, secure, and actually reaching every corner of your space.</p>
-            <a href="professional-networking-solutions.html" class="btn btn--outline btn--sm" style="margin-top:16px;">Learn more</a>
-          </div>
-
-          <div class="card">
-            <div class="card__icon" aria-hidden="true">⚙️</div>
-            <h3 class="card__title">Business Automation</h3>
-            <p class="card__body">Cut out the repetitive admin. I build simple automations and workflows that save your business real time every week.</p>
-            <a href="business-automation.html" class="btn btn--outline btn--sm" style="margin-top:16px;">Learn more</a>
-          </div>
-
+        <!-- Tab Nav -->
+        <div class="service-tabs__nav" data-animate data-delay="1">
+          <button class="service-tabs__tab active" data-tab="home">🏠 Home Support</button>
+          <button class="service-tabs__tab" data-tab="business">💼 Business IT</button>
+          <button class="service-tabs__tab" data-tab="web">🌐 Web</button>
         </div>
+
+        <!-- Home Support Panel -->
+        <div class="service-tabs__panel active" id="tab-home">
+          <div class="grid grid--3" data-stagger>
+            <div class="card">
+              <div class="card__icon" aria-hidden="true">🏠</div>
+              <h3 class="card__title">Home Support</h3>
+              <p class="card__body">Slow computer? Dodgy internet? New device you can't figure out? I come to you and sort it out — no jargon, no judgment.</p>
+              <a href="home-support.html" class="btn btn--outline btn--sm" style="margin-top:16px;">Learn more</a>
+            </div>
+            <div class="card">
+              <div class="card__icon" aria-hidden="true">👴</div>
+              <h3 class="card__title">Seniors Tech Support</h3>
+              <p class="card__body">Patient, friendly help for seniors who want to get more confident with devices, email, video calls, and online banking.</p>
+              <a href="tech-support-for-seniors.html" class="btn btn--outline btn--sm" style="margin-top:16px;">Learn more</a>
+            </div>
+            <div class="card">
+              <div class="card__icon" aria-hidden="true">💻</div>
+              <h3 class="card__title">Computer Service</h3>
+              <p class="card__body">Slow, loud, or just not working properly? I diagnose and fix computer problems — honest assessment, fair pricing.</p>
+              <a href="computer-service.html" class="btn btn--outline btn--sm" style="margin-top:16px;">Learn more</a>
+            </div>
+            <div class="card">
+              <div class="card__icon" aria-hidden="true">📱</div>
+              <h3 class="card__title">Device Setup</h3>
+              <p class="card__body">New phone, tablet, or laptop? I'll get it set up properly — accounts, apps, email, and everything else you need.</p>
+              <a href="device-setup.html" class="btn btn--outline btn--sm" style="margin-top:16px;">Learn more</a>
+            </div>
+            <div class="card">
+              <div class="card__icon" aria-hidden="true">📶</div>
+              <h3 class="card__title">WiFi Help</h3>
+              <p class="card__body">Dead zones, dropped connections, or a router that's never been set up right — I'll fix it properly.</p>
+              <a href="wifi-help-wagga-wagga.html" class="btn btn--outline btn--sm" style="margin-top:16px;">Learn more</a>
+            </div>
+            <div class="card">
+              <div class="card__icon" aria-hidden="true">🦠</div>
+              <h3 class="card__title">Virus Removal</h3>
+              <p class="card__body">Popups, slowdowns, strange behaviour — I'll clean your computer and make sure it's properly protected going forward.</p>
+              <a href="virus-malware-removal-in-wagga-wagga.html" class="btn btn--outline btn--sm" style="margin-top:16px;">Learn more</a>
+            </div>
+            <div class="card">
+              <div class="card__icon" aria-hidden="true">🖨️</div>
+              <h3 class="card__title">Printer Setup</h3>
+              <p class="card__body">Printers are one of the most frustrating bits of technology. I'll get yours working — properly — whether it's new or driving you crazy.</p>
+              <a href="printer-setup-wagga-wagga.html" class="btn btn--outline btn--sm" style="margin-top:16px;">Learn more</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Business IT Panel -->
+        <div class="service-tabs__panel" id="tab-business">
+          <div class="grid grid--3" data-stagger>
+            <div class="card">
+              <div class="card__icon" aria-hidden="true">💼</div>
+              <h3 class="card__title">IT Support for Business</h3>
+              <p class="card__body">On-site and remote IT support for Wagga small businesses. I keep your computers, printers, and networks running smoothly.</p>
+              <a href="small-business-it-support.html" class="btn btn--outline btn--sm" style="margin-top:16px;">Learn more</a>
+            </div>
+            <div class="card">
+              <div class="card__icon" aria-hidden="true">📧</div>
+              <h3 class="card__title">Microsoft 365</h3>
+              <p class="card__body">Setup, migration, and ongoing support for Microsoft 365 — email, Teams, OneDrive, and all the rest, done right the first time.</p>
+              <a href="microsoft-365-setup-in-wagga-wagga.html" class="btn btn--outline btn--sm" style="margin-top:16px;">Learn more</a>
+            </div>
+            <div class="card">
+              <div class="card__icon" aria-hidden="true">📡</div>
+              <h3 class="card__title">Networking</h3>
+              <p class="card__body">Wired and wireless networking for homes and businesses — fast, secure, and actually reaching every corner of your space.</p>
+              <a href="professional-networking-solutions.html" class="btn btn--outline btn--sm" style="margin-top:16px;">Learn more</a>
+            </div>
+            <div class="card">
+              <div class="card__icon" aria-hidden="true">⚙️</div>
+              <h3 class="card__title">Business Automation</h3>
+              <p class="card__body">Cut out the repetitive admin. I build simple automations and workflows that save your business real time every week.</p>
+              <a href="business-automation.html" class="btn btn--outline btn--sm" style="margin-top:16px;">Learn more</a>
+            </div>
+            <div class="card">
+              <div class="card__icon" aria-hidden="true">🤖</div>
+              <h3 class="card__title">AI Tools</h3>
+              <p class="card__body">Practical AI tools set up for your business — not hype, just tools that actually save you time and money.</p>
+              <a href="ai-that-works-for-your-business.html" class="btn btn--outline btn--sm" style="margin-top:16px;">Learn more</a>
+            </div>
+            <div class="card">
+              <div class="card__icon" aria-hidden="true">🏢</div>
+              <h3 class="card__title">Office IT Fitout</h3>
+              <p class="card__body">Moving into a new office or setting up from scratch? I'll get your whole workspace connected and running smoothly from day one.</p>
+              <a href="office-it-fitout-in-wagga-wagga.html" class="btn btn--outline btn--sm" style="margin-top:16px;">Learn more</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Web Panel -->
+        <div class="service-tabs__panel" id="tab-web">
+          <div class="grid grid--2" style="max-width:720px; margin:0 auto;" data-stagger>
+            <div class="card">
+              <div class="card__icon" aria-hidden="true">🌐</div>
+              <h3 class="card__title">Web Design</h3>
+              <p class="card__body">Professional, mobile-friendly websites built to help your business get found online. No templates, no fluff — just a site that works.</p>
+              <a href="web-design.html" class="btn btn--outline btn--sm" style="margin-top:16px;">Learn more</a>
+            </div>
+            <div class="card">
+              <div class="card__icon" aria-hidden="true">🔧</div>
+              <h3 class="card__title">Web Maintenance</h3>
+              <p class="card__body">Ongoing care for your website — updates, security patches, backups, and edits handled so you don't have to think about it.</p>
+              <a href="web-maintenance.html" class="btn btn--outline btn--sm" style="margin-top:16px;">Learn more</a>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
 
@@ -424,5 +509,6 @@
     });
   </script>
 
+  <script src="js/animations.js"></script>
 </body>
 </html>
