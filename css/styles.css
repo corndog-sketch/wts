@@ -748,6 +748,11 @@ strong { color: var(--text); font-weight: 600; }
   gap: 32px;
 }
 
+.process-grid--5 {
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+}
+
 .process-step {
   text-align: center;
 }
@@ -1399,7 +1404,8 @@ strong { color: var(--text); font-weight: 600; }
 
   .pricing-grid { grid-template-columns: 1fr; }
 
-  .process-grid { grid-template-columns: 1fr; }
+  .process-grid,
+  .process-grid--5 { grid-template-columns: 1fr; }
 
   .intro-grid { grid-template-columns: 1fr; gap: 40px; }
   .intro-grid--reverse { direction: ltr; }
