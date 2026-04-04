@@ -7,7 +7,7 @@
   <meta name="description" content="Tech tips and local business advice from Wagga Technology Solutions. IT support insights, web design tips, and more for Wagga Wagga businesses.">
   <link rel="canonical" href="https://waggatechsolutions.com.au/blog">
   <meta property="og:title" content="Tech Tips Blog | Wagga Technology Solutions">
-  <meta property="og:description" content="Practical tech advice for Wagga Wagga small businesses and residents — no jargon.">
+  <meta property="og:description" content="Practical tech advice for Wagga Wagga small businesses and residents — plain English.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://waggatechsolutions.com.au/blog">
   <link rel="stylesheet" href="css/styles.css">
@@ -114,7 +114,7 @@
     <div class="container">
       <div class="hero__kicker">Blog · Wagga Technology Solutions</div>
       <h1 class="hero__title">Tech Tips &amp; Local Business Advice</h1>
-      <p class="hero__subtitle">Practical tech advice for Wagga Wagga small businesses and residents — no jargon, no fluff.</p>
+      <p class="hero__subtitle">Practical tech advice for Wagga Wagga small businesses and residents — no fluff, just practical advice.</p>
     </div>
   </section>
 
@@ -279,15 +279,6 @@
   </footer>
 
   <script>
-    const hamburger = document.getElementById('hamburger');
-    const mobileMenu = document.getElementById('mobile-menu');
-    if (hamburger && mobileMenu) {
-      hamburger.addEventListener('click', () => {
-        const open = mobileMenu.classList.toggle('open');
-        hamburger.classList.toggle('open', open);
-        hamburger.setAttribute('aria-expanded', open);
-      });
-    }
     document.querySelectorAll('form[data-success]').forEach(form => {
       form.addEventListener('submit', e => {
         e.preventDefault();

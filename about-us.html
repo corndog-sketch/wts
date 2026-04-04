@@ -176,7 +176,7 @@
 
           <div class="card">
             <div class="card__icon" aria-hidden="true">💬</div>
-            <h3 class="card__title">Honest &amp; Jargon-Free</h3>
+            <h3 class="card__title">Honest &amp; Plain English</h3>
             <p class="card__body">I explain what's wrong, what I'm going to do about it, and what it will cost — in plain English, before I start. No surprises on the invoice, and no pretending something is complicated just to charge more.</p>
           </div>
 
@@ -289,16 +289,6 @@
   </footer>
 
   <script>
-    // Hamburger menu
-    const hamburger = document.getElementById('hamburger');
-    const mobileMenu = document.getElementById('mobile-menu');
-    if (hamburger && mobileMenu) {
-      hamburger.addEventListener('click', () => {
-        const open = mobileMenu.classList.toggle('open');
-        hamburger.classList.toggle('open', open);
-        hamburger.setAttribute('aria-expanded', open);
-      });
-    }
     // FAQ accordion
     document.querySelectorAll('.faq-question').forEach(btn => {
       btn.addEventListener('click', () => {
